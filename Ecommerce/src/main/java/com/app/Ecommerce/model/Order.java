@@ -6,9 +6,12 @@ import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 
+import java.io.Serializable;
+
 @Data
 @Document(indexName = "orders")
-public class Order {
+public class Order implements Serializable {
+
     @Id
     private String orderId;
 
